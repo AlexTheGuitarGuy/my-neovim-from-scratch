@@ -79,28 +79,28 @@ local opts = {
 }
 
 local mappings = {
-	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-	["w"] = { "<cmd>w!<CR>", "Save" },
-	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	a = { "<cmd>Alpha<cr>", "Alpha" },
+	e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+	w = { "<cmd>w!<CR>", "Save" },
+	q = { "<cmd>q!<CR>", "Quit" },
+	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
-  b = {
-    name = "Buffers",
-    b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
-    c = { "<cmd>bd<cr>", "Close Buffer" },
-  },
+	b = {
+		name = "Buffers",
+		b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
+		c = { "<cmd>bd<cr>", "Close Buffer" },
+	},
 	f = {
 		name = "Telescope",
 
-		["f"] = {
+		f = {
 			"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"Find files",
 		},
-		["w"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-		["r"] = {
+		w = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+		r = {
 			"<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 			"Recent Files",
 		},
