@@ -28,7 +28,6 @@ local options = {
   number = true,                           -- set numbered lines
   relativenumber = false,                  -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
-
   signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = true,                             -- display lines as one long line
   linebreak = true,                        -- companion to wrap, don't split words
@@ -36,6 +35,9 @@ local options = {
   sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
+
+  number = true,
+  relativenumber = true
 }
 
 for k, v in pairs(options) do
