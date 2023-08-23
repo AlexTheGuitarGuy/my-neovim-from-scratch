@@ -81,6 +81,3 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
--- Buffers --
-keymap("n", "[b", ":bp<CR>", opts)
-keymap("n", "]b", ":bn<CR>", opts)
