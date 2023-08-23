@@ -153,6 +153,10 @@ return packer.startup(function(use)
 				server_opts_overrides = {},
 			})
 		end,
+
+		-- The Primeagen
+		use({ "ThePrimeagen/vim-be-good", }),
+    use({ "ThePrimeagen/harpoon", }),
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim

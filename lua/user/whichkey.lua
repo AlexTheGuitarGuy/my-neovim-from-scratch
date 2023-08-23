@@ -140,6 +140,16 @@ local mappings = {
 		},
 	},
 
+  h = {
+    name = "Harpoon",
+    h = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Harpoon Menu" },
+    a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add File" },
+    ["1"] = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Jump to File 1" },
+    ["2"] = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Jump to File 2" },
+    ["3"] = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Jump to File 3" },
+    ["4"] = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Jump to File 4" },
+  },
+
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
