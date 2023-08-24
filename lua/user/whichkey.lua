@@ -84,7 +84,7 @@ local mappings = {
 	w = { "<cmd>w!<CR>", "Save" },
 	q = { "<cmd>q!<CR>", "Quit" },
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+	H = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   Y = { "ggVGy", "Copy All" },
 
