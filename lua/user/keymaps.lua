@@ -81,3 +81,9 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Vertical split
+keymap("n", "|", ":vsplit<CR>", opts)
+keymap("n", "sv", ":vsplit %:p:h<CR>", opts)
+
+-- Exit insert mode
+keymap("i", "jk", "<ESC>", opts)

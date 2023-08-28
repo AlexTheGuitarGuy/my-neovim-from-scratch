@@ -165,6 +165,3 @@ bufferline.setup {
   },
 }
 
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
