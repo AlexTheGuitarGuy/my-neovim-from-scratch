@@ -84,6 +84,3 @@ keymap("v", "p", '"_dP', opts)
 -- Vertical split
 keymap("n", "|", ":vsplit<CR>", opts)
 keymap("n", "sv", ":vsplit %:p:h<CR>", opts)
-
--- Exit insert mode
-keymap("i", "jk", "<ESC>", opts)

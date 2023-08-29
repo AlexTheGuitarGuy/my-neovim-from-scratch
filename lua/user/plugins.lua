@@ -62,8 +62,6 @@ return packer.startup(function(use)
 	use({ "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" })
 	use("navarasu/onedark.nvim")
 
-	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
-	use({ "jay-babu/mason-null-ls.nvim" })
 	use({ "RRethy/vim-illuminate", commit = "d6ca7f77eeaf61b3e6ce9f0e5a978d606df44298" })
 
 	-- Telescope
@@ -164,6 +162,10 @@ return packer.startup(function(use)
 				-- Snippets
 				{ "L3MON4D3/LuaSnip" },
 				{ "rafamadriz/friendly-snippets" },
+
+				-- Null-ls
+				{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
+				{ "jay-babu/mason-null-ls.nvim" },
 			},
 		}),
 
