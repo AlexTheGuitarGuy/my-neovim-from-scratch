@@ -1,6 +1,10 @@
 local lsp = require("lsp-zero")
+local util = require("lspconfig.util")
 
 lsp.preset("recommended")
+lsp.configure("angularls", {
+	root_dir = util.root_pattern("angular.json", "project.json"),
+})
 
 lsp.ensure_installed({
 	"angularls",
@@ -129,9 +133,14 @@ local null_ls = require("null-ls")
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"prettier",
+		"prettierd",
+		"eslint_d",
+		"firefox-debug-adapter",
+		"gitlint",
 		"black",
 		"stylua",
 		"nxls",
+		"rustywind",
 	},
 })
 

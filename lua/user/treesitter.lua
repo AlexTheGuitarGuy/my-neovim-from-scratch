@@ -2,7 +2,7 @@ local configs = require("nvim-treesitter.configs")
 
 configs.setup({
 	ensure_installed = {
-		"angular",
+	-- "angular",
 		"bash",
 		"c",
 		"css",
