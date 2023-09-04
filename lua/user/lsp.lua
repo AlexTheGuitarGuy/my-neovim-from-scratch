@@ -127,11 +127,12 @@ lsp.setup()
 local null_ls = require("null-ls")
 
 require("mason-null-ls").setup({
-  ensure_installed  = {
-    "prettier",
-    "black",
-    "stylua",
-  },
+	ensure_installed = {
+		"prettier",
+		"black",
+		"stylua",
+		"nxls",
+	},
 })
 
 local formatting = null_ls.builtins.formatting

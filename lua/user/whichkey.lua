@@ -91,7 +91,8 @@ local mappings = {
 	b = {
 		name = "Buffers",
 		b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
-		c = { "<cmd>bd<cr>", "Close Buffer" },
+		c = { "<cmd>:<C-U>bprevious <bar> bdelete #<cr>", "Close Buffer" },
+		C = { "<cmd>bufdo bd<cr>", "Close All" },
 	},
 
 	p = {
@@ -102,6 +103,17 @@ local mappings = {
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
 		m = { "<cmd>Mason<cr>", "Mason" },
+	},
+
+	r = {
+		name = "Refactor",
+		f = { "<cmd>Refactor extract_to_file<cr>", "Extract to File" },
+		n = { "<cmd>Refactor refactor_names<cr>", "Rename" },
+		e = { "<cmd>Refactor extract<cr>", "Extract" },
+		v = { "<cmd>Refactor extract_var<cr>", "Extract Variable" },
+		b = { "<cmd>Refactor extract_block", "Extract Block" },
+		I = { "<cmd>Refactor inline_func", "Inline Function" },
+		i = { "<cmd>Refactor inline_var", "Inline Variable" },
 	},
 
 	g = {
@@ -168,6 +180,7 @@ local mappings = {
 			"Workspace Symbols",
 		},
 	},
+
 	f = {
 		name = "Telescope",
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
@@ -182,6 +195,7 @@ local mappings = {
 		u = { "<cmd>Telescope grep_string<cr>", "Find Under Cursor" },
 		p = { "<cmd>Telescope projects<cr>", "Projects" },
 		s = { "<cmd>Telescope git_stash<cr>", "Stash" },
+		g = { "<cmd>Telescope git_files<cr>", "Git Files" },
 	},
 
 	t = {

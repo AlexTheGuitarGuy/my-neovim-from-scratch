@@ -139,6 +139,13 @@ return packer.startup(function(use)
 		-- The Primeagen
 		use({ "ThePrimeagen/vim-be-good" }),
 		use({ "ThePrimeagen/harpoon" }),
+		use({
+			"ThePrimeagen/refactoring.nvim",
+			requires = {
+				{ "nvim-lua/plenary.nvim" },
+				{ "nvim-treesitter/nvim-treesitter" },
+			},
+		}),
 
 		use("mbbill/undotree"),
 		use("nvim-treesitter/nvim-treesitter-context"),

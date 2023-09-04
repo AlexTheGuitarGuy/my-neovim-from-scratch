@@ -19,7 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
-keymap("n", "<C-s>", ":w<CR>")
+keymap("n", "<C-s>", ":w!<CR>")
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -63,7 +63,6 @@ keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
--- Terminal --
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
@@ -84,3 +83,6 @@ keymap("v", "p", '"_dP', opts)
 -- Vertical split
 keymap("n", "|", ":vsplit<CR>", opts)
 keymap("n", "sv", ":vsplit %:p:h<CR>", opts)
+
+-- Open terminal when F7 is pressed
+keymap("n", "<F7>", ":ToggleTerm<CR>", opts)
