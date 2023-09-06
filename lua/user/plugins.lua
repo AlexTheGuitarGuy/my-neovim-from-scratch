@@ -85,6 +85,15 @@ return packer.startup(function(use)
 	-- Multicursor
 	use({ "mg979/vim-visual-multi" })
 
+	-- Surround
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({})
+		end,
+	})
+
 	-- Copilot
 	use({
 		"zbirenbaum/copilot.lua",

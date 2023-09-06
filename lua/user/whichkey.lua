@@ -90,11 +90,29 @@ local mappings = {
 
 	b = {
 		name = "Buffers",
-		b = { "<cmd>Telescope buffers<cr>", "List Buffers" },
-		c = { "<cmd>:<C-U>bprevious <bar> bdelete #<cr>", "Close Buffer" },
-		C = { "<cmd>bufdo bd<cr>", "Close All" },
+		j = { "<cmd>BufferLinePick<cr>", "Jump" },
+		f = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+		b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+		n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+		W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
+		e = {
+			"<cmd>BufferLinePickClose<cr>",
+			"Pick which buffer to close",
+		},
+		h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+		l = {
+			"<cmd>BufferLineCloseRight<cr>",
+			"Close all to the right",
+		},
+		D = {
+			"<cmd>BufferLineSortByDirectory<cr>",
+			"Sort by directory",
+		},
+		L = {
+			"<cmd>BufferLineSortByExtension<cr>",
+			"Sort by language",
+		},
 	},
-
 	p = {
 		name = "Packer",
 		c = { "<cmd>PackerCompile<cr>", "Compile" },
@@ -102,7 +120,6 @@ local mappings = {
 		s = { "<cmd>PackerSync<cr>", "Sync" },
 		S = { "<cmd>PackerStatus<cr>", "Status" },
 		u = { "<cmd>PackerUpdate<cr>", "Update" },
-		m = { "<cmd>Mason<cr>", "Mason" },
 	},
 
 	r = {
@@ -152,17 +169,11 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = {
-			"<cmd>Telescope diagnostics bufnr=0<cr>",
-			"Document Diagnostics",
-		},
-		w = {
-			"<cmd>Telescope diagnostics<cr>",
-			"Workspace Diagnostics",
-		},
+		d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
+		w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		I = { "<cmd>Mason<cr>", "Mason Info" },
 		j = {
 			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
 			"Next Diagnostic",
@@ -179,6 +190,7 @@ local mappings = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
 			"Workspace Symbols",
 		},
+		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
 	},
 
 	f = {
@@ -193,9 +205,15 @@ local mappings = {
 		},
 		w = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 		u = { "<cmd>Telescope grep_string<cr>", "Find Under Cursor" },
-		p = { "<cmd>Telescope projects<cr>", "Projects" },
+		P = { "<cmd>Telescope projects<cr>", "Projects" },
 		s = { "<cmd>Telescope git_stash<cr>", "Stash" },
 		g = { "<cmd>Telescope git_files<cr>", "Git Files" },
+		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		l = { "<cmd>Telescope resume<cr>", "Resume last search" },
+		p = {
+			"<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+			"Colorscheme with Preview",
+		},
 	},
 
 	t = {
@@ -208,6 +226,13 @@ local mappings = {
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 	},
+
+	T = {
+		name = "Treesitter",
+		i = { ":TSConfigInfo<cr>", "Info" },
+	},
+
+	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 }
 
 which_key.setup(setup)
