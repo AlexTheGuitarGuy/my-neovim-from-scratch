@@ -144,50 +144,61 @@ return packer.startup(function(use)
 				server_opts_overrides = {},
 			})
 		end,
-
-		-- The Primeagen
-		use({ "ThePrimeagen/vim-be-good" }),
-		use({ "ThePrimeagen/harpoon" }),
-		use({
-			"ThePrimeagen/refactoring.nvim",
-			requires = {
-				{ "nvim-lua/plenary.nvim" },
-				{ "nvim-treesitter/nvim-treesitter" },
-			},
-		}),
-
-		use("mbbill/undotree"),
-		use("nvim-treesitter/nvim-treesitter-context"),
-		use({
-			"VonHeikemen/lsp-zero.nvim",
-			branch = "v1.x",
-			requires = {
-				-- LSP Support
-				{ "neovim/nvim-lspconfig" },
-				{ "williamboman/mason.nvim" },
-				{ "williamboman/mason-lspconfig.nvim" },
-
-				-- Autocompletion
-				{ "hrsh7th/nvim-cmp" },
-				{ "hrsh7th/cmp-buffer" },
-				{ "hrsh7th/cmp-path" },
-				{ "saadparwaiz1/cmp_luasnip" },
-				{ "hrsh7th/cmp-nvim-lsp" },
-				{ "hrsh7th/cmp-nvim-lua" },
-
-				-- Snippets
-				{ "L3MON4D3/LuaSnip" },
-				{ "rafamadriz/friendly-snippets" },
-
-				-- Null-ls
-				{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
-				{ "jay-babu/mason-null-ls.nvim" },
-			},
-		}),
-
-		use("folke/zen-mode.nvim"),
 	})
 
+	-- The Primeagen
+	use({ "ThePrimeagen/vim-be-good" })
+	use({ "ThePrimeagen/harpoon" })
+	use({
+		"ThePrimeagen/refactoring.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	})
+
+	use("mbbill/undotree")
+	use("nvim-treesitter/nvim-treesitter-context")
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v1.x",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
+
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
+
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+
+			-- Null-ls
+			{ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" },
+			{ "jay-babu/mason-null-ls.nvim" },
+		},
+	})
+
+	use("folke/zen-mode.nvim")
+
+	use({
+		"rust-lang/rust.vim",
+		ft = "rust",
+		config = function()
+			vim.g.rustfmt_autosave = 1
+		end,
+	})
+
+	use("pocco81/auto-save.nvim")
+	use({ "neoclide/coc.nvim", branch = "master", run = "npm ci" })
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

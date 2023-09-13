@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<C-s>", ":w!<CR>")
+keymap("n", "<C-q>", ":q!<CR>")
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -86,3 +87,17 @@ keymap("n", "sv", ":vsplit %:p:h<CR>", opts)
 
 -- Open terminal when F7 is pressed
 keymap("n", "<F7>", ":ToggleTerm<CR>", opts)
+
+-- Folding via nvim-ufo
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+vim.keymap.set("n", "zr", require("ufo").openFoldsExceptKinds)
+vim.keymap.set("n", "zm", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set("n", "K", function()
+	local winid = require("ufo").peekFoldedLinesUnderCursor()
+	if not winid then
+		-- choose one of coc.nvim and nvim lsp
+		vim.fn.CocActionAsync("definitionHover") -- coc.nvim
+		vim.lsp.buf.hover()
+	end
+end)

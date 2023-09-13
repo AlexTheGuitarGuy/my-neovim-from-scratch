@@ -2,7 +2,7 @@ local configs = require("nvim-treesitter.configs")
 
 configs.setup({
 	ensure_installed = {
-	-- "angular",
+		-- "angular",
 		"bash",
 		"c",
 		"css",
@@ -20,6 +20,7 @@ configs.setup({
 		"svelte",
 		"typescript",
 		"yaml",
+		"rust",
 		"vim",
 	}, -- put the language you want in this array
 	-- ensure_installed = "all", -- one of "all" or a list of languages

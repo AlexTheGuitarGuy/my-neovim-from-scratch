@@ -85,8 +85,15 @@ local mappings = {
 	q = { "<cmd>q!<CR>", "Quit" },
 	c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
 	H = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	P = { "<cmd>PreviewSvg<cr>", "Preview SVG" },
 	Y = { "ggVGy", "Copy All" },
+	t = {
+		name = "Toggle/Disable",
+
+		a = { "<cmd>:ASToggle<cr>", "Toggle Autosave" },
+		c = { "<cmd>:Copilot disable<cr>", "Disable Copilot" },
+		C = { "<cmd>:Copilot enable<cr>", "Enable Copilot" },
+	},
 
 	b = {
 		name = "Buffers",
@@ -103,6 +110,10 @@ local mappings = {
 		l = {
 			"<cmd>BufferLineCloseRight<cr>",
 			"Close all to the right",
+		},
+		C = {
+			"<cmd>BufferLineGroupClose ungrouped<cr><cmd>Bdelete!<cr>",
+			"Close all",
 		},
 		D = {
 			"<cmd>BufferLineSortByDirectory<cr>",
@@ -191,6 +202,7 @@ local mappings = {
 			"Workspace Symbols",
 		},
 		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+		h = { "<cmd>lua vim.diagnostic.open_float()<cr>", "Hover Diagnostics" },
 	},
 
 	f = {
@@ -216,7 +228,7 @@ local mappings = {
 		},
 	},
 
-	t = {
+	T = {
 		name = "Terminal",
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
@@ -225,11 +237,6 @@ local mappings = {
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
 		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-	},
-
-	T = {
-		name = "Treesitter",
-		i = { ":TSConfigInfo<cr>", "Info" },
 	},
 
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
