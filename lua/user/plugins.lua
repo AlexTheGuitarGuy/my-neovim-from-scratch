@@ -197,7 +197,7 @@ return packer.startup(function(use)
 	})
 
 	use("pocco81/auto-save.nvim")
-	use({ "neoclide/coc.nvim", branch = "master", run = "npm ci" })
+	-- use({ "neoclide/coc.nvim", branch = "master", run = "npm ci" })
 	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
