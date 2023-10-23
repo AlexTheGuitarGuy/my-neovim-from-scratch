@@ -65,7 +65,7 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate", commit = "d6ca7f77eeaf61b3e6ce9f0e5a978d606df44298" })
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
+	use({ "nvim-telescope/telescope.nvim" })
 
 	-- Telescope recent files
 	use({ "smartpde/telescope-recent-files" })
