@@ -19,6 +19,7 @@ configs.setup({
 		"sql",
 		"svelte",
 		"typescript",
+		"tsx",
 		"yaml",
 		"rust",
 		"vim",
